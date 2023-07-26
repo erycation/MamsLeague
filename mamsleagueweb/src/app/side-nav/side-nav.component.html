@@ -1,0 +1,28 @@
+
+<mat-drawer-container class="example-container mat-typography" style="position: relative;height: 900px;">
+	<mat-drawer #drawer mode="side" disableClose="true" opened="true">
+		<mat-nav-list>
+			<mat-list-item >
+				<mat-icon mat-list-icon >person</mat-icon>
+				<h4>Person</h4>
+			</mat-list-item>
+			<mat-list-item>
+				<mat-icon mat-list-icon>assignment</mat-icon>
+				<h4>Assignment</h4>
+			</mat-list-item>
+			<mat-list-item (click)="router.navigate(['/schedule']);">
+				<mat-icon mat-list-icon>domain</mat-icon>
+				<h4>Domain</h4>
+			</mat-list-item>
+			<mat-list-item (click)="router.navigate(['/login']);"> 
+				<mat-icon mat-list-icon>folder_shared</mat-icon>
+				<h4>Folder shared</h4>
+			</mat-list-item>
+		</mat-nav-list>
+	</mat-drawer>
+
+	<div class="example-sidenav-content">
+		<!--<hello></hello>-->
+        <router-outlet></router-outlet>           
+	</div>
+</mat-drawer-container>
