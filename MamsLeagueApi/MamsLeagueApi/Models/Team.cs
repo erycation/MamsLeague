@@ -8,7 +8,7 @@ namespace MamsLeagueApi.Models
     {
         [Key]
         public Guid Id { get; set; }
-        public string TeamName { get; set; }
-        public virtual ICollection<Player> Players { get; set; }
+        public string? TeamName { get; set; }
+        public virtual ICollection<Player>? Players { get; set; }
     }
 }

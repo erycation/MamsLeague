@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MamsLeagueApi.Models
@@ -8,9 +7,7 @@ namespace MamsLeagueApi.Models
     public class SchedulePlay
     {
         [Key]
-        public Guid Id { get; set; }
-        [Required]
-        [BindProperty, DataType(DataType.Date)]
+        public Guid Id { get; set; } = Guid.NewGuid();
         public DateTime ScheduleDate { get; set; } = DateTime.Now;
     }
 }

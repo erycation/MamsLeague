@@ -9,14 +9,10 @@ namespace MamsLeagueApi.Models
         [Key]
         public Guid Id { get; set; }
         public Guid TeamId { get; set; }
-        [Required]
-        public string Firstname { get; set; }
-        [Required]
-        public string Surname { get; set; }
-        [Required]
-        public string IdentityNumber { get; set; }
-        [Required]
-        public string CardNumber { get; set; }
+        public string? Firstname { get; set; }
+        public string? Surname { get; set; }
+        public string? IdentityNumber { get; set; }
+        public string? CardNumber { get; set; }
         public virtual Team? Team { get; set; }
     }
 }
