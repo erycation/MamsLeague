@@ -7,7 +7,7 @@ namespace MamsLeagueApi.Models
     public class PlayTime
     {
         [Key]
-        public Guid Id { get; set; }
-        public string Time { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public string? Time { get; set; }
     }
 }

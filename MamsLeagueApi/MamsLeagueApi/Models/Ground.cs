@@ -7,7 +7,7 @@ namespace MamsLeagueApi.Models
     public class Ground
     {
         [Key]
-        public Guid Id { get; set; }
-        public string GroundName { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public string? GroundName { get; set; }
     }
 }

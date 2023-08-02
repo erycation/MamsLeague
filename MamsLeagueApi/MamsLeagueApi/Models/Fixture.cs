@@ -13,7 +13,7 @@ namespace MamsLeagueApi.Models
         }
 
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public Guid SchedulePlayId { get; set; }
         public Guid GroundId { get; set; }
         public Guid PlayTimeId { get; set; }       

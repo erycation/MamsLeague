@@ -19,8 +19,12 @@ namespace MamsLeagueApi.Extention
             services.AddScoped<ITeamService, TeamService>();
             services.AddScoped<ISchedulePlayRepository, SchedulePlayRepository>();
             services.AddScoped<ISchedulePlayService, SchedulePlayService>();
-
+            services.AddScoped<IPlayTimeRepository, PlayTimeRepository>();
+            services.AddScoped<IPlayTimeService, PlayTimeService>();
+            services.AddScoped<IGroundRepository, GroundRepository>();
+            services.AddScoped<IGroundService, GroundService>();
             
+
              //services.AddScoped<IEndPointPoInboxService, EndPointPoInboxService>();
              //services.AddScoped<IMobileDashboardService, MobileDashboardService>();
              //services.AddScoped<ICoAccusedDetailsService, CoAccusedDetailsService>();
