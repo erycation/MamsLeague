@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-header"><h1 mat-dialog-title>Schedule</h1></div>
+    <div class="card-body">
+        <div class="col-md-12">
+        <div class="form-group">
+            <label for="email">Schedule Date</label>
+            <input type="date" class="form-control" [(ngModel)]="schedulePlayDto.scheduleDate">
+          </div>
+        </div>
+    </div>
+    <div class="card-footer" >
+        <div mat-dialog-actions style="text-align: right;">
+            <button mat-button (click)="onNoClick()">Cancel</button>
+            <button mat-flat-button class="btn-margin" mat-button [mat-dialog-close]="schedulePlayDto" 
+              (click)="saveSchedulePlay()" cdkFocusInitial>Ok</button>
+          </div>
+    </div>
+  </div>
+
+
+<!--<div mat-dialog-content>
+    <div class="col-md-12">
+        Schedule Date<br />
+        <input class="form-control" type="date" [(ngModel)]="schedulePlayDto.scheduleDate">
+      </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-flat-button class="btn-margin" mat-button [mat-dialog-close]="schedulePlayDto" 
+    (click)="saveSchedulePlay()" cdkFocusInitial>Ok</button>
+</div> -->
+
+
+<!--<h1 mat-dialog-title>WARNING!</h1>
+<div mat-dialog-content>
+  <p>You are about to generate a new Lot #. YOU CAN'T UNDO IT</p>
+  <mat-form-field>
+    <input matInput type="password" placeholder="Password" [(ngModel)]="password">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="password" cdkFocusInitial>Ok</button>
+</div>
+-->

@@ -22,10 +22,16 @@ namespace MamsLeagueApi.DomainLeague.Persistance
             return entity;
         }
 
-        public Task UpdateAsync(T entity)
+        public Task UpdateAsync1(T entity)
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
             return Task.CompletedTask;
+        }
+
+        public async Task<T> UpdateAsync(T entity)
+        {
+            _dbContext.Entry(entity).State = EntityState.Modified;
+            return entity;
         }
 
         public Task DeleteAsync(T entity)

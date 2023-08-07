@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
 //Start
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
@@ -58,6 +57,8 @@ import { HelloComponent } from './hello.component';
 import { TeamComponent } from './pages/team/team.component';
 import { PlayerComponent } from './pages/team/player/player.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { FixtureComponent } from './pages/schedule/fixture/fixture.component';
+import { ScheduleDialogComponent } from './pages/schedule/schedule-dialog/schedule-dialog.component';
 
 @NgModule({
   declarations: [
@@ -66,9 +67,12 @@ import { ScheduleComponent } from './pages/schedule/schedule.component';
     SideNavComponent,
     TeamComponent,
     PlayerComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    FixtureComponent,
+    ScheduleDialogComponent
   ],
   imports: [
+    MatFormFieldModule, MatDialogModule, MatInputModule,
     BrowserModule,
     AppRoutingModule,
     BrowserModule, 
@@ -83,6 +87,7 @@ import { ScheduleComponent } from './pages/schedule/schedule.component';
   MatToolbarModule 
   ],
   providers: [],
+  //entryComponents: [ ScheduleDialogComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,6 +5,15 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+//enable cors
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("MyAllowSpecificOrigins", 
+        builder => builder.AllowAnyOrigin().
+        AllowAnyMethod().AllowAnyHeader());
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -27,9 +36,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseCors("MyAllowSpecificOrigins");
 
 app.UseAuthorization();
+
+app.UseHttpsRedirection();
+
+
 
 app.UseMiddleware<ErrorHandlerMiddleware>();
 

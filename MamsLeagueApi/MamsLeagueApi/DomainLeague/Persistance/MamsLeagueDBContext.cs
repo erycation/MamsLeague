@@ -20,16 +20,18 @@ namespace MamsLeagueApi.DomainLeague.Persistance
         public DbSet<SchedulePlay> SchedulePlays { get; set; }
         public DbSet<PlayTime> PlayTimes { get; set; }
         public DbSet<Ground> Grounds { get; set; }
+        public DbSet<Fixture> Fixtures { get; set; }
+
+        public DbSet<MatchResult> MatchResults { get; set; }
 
         /*
         public DbSet<AuthUser> AuthUsers { get; set; }
         
-        
-        public DbSet<Ground> Grounds { get; set; }
-        public DbSet<MatchResult> MatchResults { get; set; }
+       
+       
         public DbSet<PlayTime> PlayTimes { get; set; }
         public DbSet<SchedulePlay> SchedulePlays { get; set; }
-        public DbSet<Fixture> Fixtures { get; set; }
+       
         public DbSet<LogStanding> LogStandings { get; set; }
         */
     }

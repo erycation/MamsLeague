@@ -1,10 +1,10 @@
 
-<h1>Schedule</h1>
+<h1>Fixture</h1>
 <div class="card">
    <div class="card-body">
     <div class="row">     
       <div class="col-sm-10" style="text-align: right;">
-        <button type="button" class="btn btn-primary" (click)="addSchedulePlay()">Add Schedule</button>
+        <button type="button" class="btn btn-primary" >Add Fixture</button>
       </div>
       <div class="col-sm-2"></div>
     </div>
@@ -12,34 +12,57 @@
       <div class="col-sm-10">
         <table class="table align-middle mb-0 bg-secondary">
           <thead style="background: #3f51b5;color: white;">
-            <tr >
-              <th>Schedule Date</th>
+            <tr>
+              <th>Time</th>
+              <th></th>
+              <th></th>
               <th>Actions</th>
+              
             </tr>
           </thead>
           <tbody >
-            <tr *ngFor="let schedulePlay of schedulePlaysDto">
+            <tr *ngFor="let fixture of fixturesDto">
+              <!--<td>
+                <div class="d-flex align-items-center">
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1">{{fixture.schedulePlayDto?.scheduleDate | date: 'd MMM yyyy'}}</p>
+                      <p class="text-muted mb-0">{{fixture.playTimeDto?.time}}</p>
+                    </div>
+                  </div>              
+              </td>-->
+              <td>
+              
+                <p class="fw-normal mb-1">{{fixture.schedulePlayDto?.scheduleDate | date: 'd MMM yyyy'}}</p>
+                <p class="text-muted mb-0">{{fixture.playTimeDto?.time}}</p>
+       
+              </td>
               <td>
                 <div class="d-flex align-items-center">
-                  <div class="ms-3">
-                    <p class="fw-bold mb-1">{{schedulePlay.scheduleDate | date: 'd MMM yyyy'}}</p>                    
-                  </div>
-                </div>
+                    <div class="ms-12">
+                        <p class="fw-bold mb-1" style="color: red;font-size: 35;">                  
+                      {{fixture.homeTeamDto?.teamName}}&nbsp;VS&nbsp;                  
+                        {{fixture.awayTeamDto?.teamName}}                   
+                    </p>
+                      
+                    </div>
+                  </div>  
+              </td>
+              <!--<td><p class="text-muted mb-0">
+                Time : {{fixture.playTimeDto?.time}} |
+                {{fixture.groundDto?.groundName}} |
+                Commisioner</p>
+            </td>-->
+
+            <td>
+                <p class="fw-normal mb-1">{{fixture.groundDto?.groundName}}</p>
+                <p class="text-muted mb-0">Commisioner</p>
               </td>
               <td>
-                  <button type="button" class="btn btn-outline-primary">Edit</button>
-                  &nbsp; 
-                <button type="button" class="btn btn-outline-secondary" (click)="goToFixtureUrl(schedulePlay.id);"> Fixtures</button>&nbsp;
-                  <button type="button" class="btn btn-outline-success" (click)="goToFixtureUrl(schedulePlay.id);">Results</button>
-                <!--<button type="button" class="btn btn-link btn-sm btn-rounded">
-                  Fixtures
-                </button>
-                <button type="button" class="btn btn-link btn-sm btn-rounded">
-                  Results
-                </button>-->
+                <a routerLink="add" class="btn btn-sm btn-success mb-2">Results</a>
               </td>
+
             </tr>
-            <tr *ngIf="!schedulePlaysDto">
+            <tr *ngIf="!fixturesDto">
               <td colspan="4" class="text-center">
                   <span class="spinner-border spinner-border-lg align-center"></span>
               </td>

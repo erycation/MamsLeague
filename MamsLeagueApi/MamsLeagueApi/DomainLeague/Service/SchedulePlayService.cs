@@ -21,6 +21,9 @@ namespace MamsLeagueApi.DomainLeague.Service
 
         public async Task<SchedulePlayDto> AddSchedulePlay(SchedulePlayDto schedulePlayDto)
         {
+            if (schedulePlayDto.ScheduleDate == null)
+                throw new AppException($"Schedule Date Required.");
+
             var requestSchedulePlay = new SchedulePlay
             {
                 ScheduleDate = schedulePlayDto.ScheduleDate

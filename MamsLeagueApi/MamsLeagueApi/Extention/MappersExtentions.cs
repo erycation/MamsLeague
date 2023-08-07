@@ -9,13 +9,21 @@ namespace MamsLeagueApi.Extention
         public MappersExtentions()
         {
             CreateMap<Player, PlayerDto>();
-            CreateMap<Team, TeamDto>()
-                 .ForMember(s => s.PlayersDto, r => r.MapFrom(ur => ur.Players));
+            CreateMap<Team, TeamDto>();
+                 //.ForMember(s => s.PlayersDto, r => r.MapFrom(ur => ur.Players));
             CreateMap<SchedulePlay, SchedulePlayDto>();
             CreateMap<PlayTime, PlayTimeDto>();
             CreateMap<Ground, GroundDto>();
+            //CreateMap<Fixture, FixtureDto>();
 
-            
+            CreateMap<Fixture, FixtureDto>()
+               .ForMember(s => s.AwayTeamDto, r => r.MapFrom(ur => ur.AwayTeam))
+               .ForMember(s => s.GroundDto, r => r.MapFrom(ur => ur.Ground))
+               .ForMember(s => s.HomeTeamDto, r => r.MapFrom(ur => ur.HomeTeam))
+               .ForMember(s => s.PlayTimeDto, r => r.MapFrom(ur => ur.PlayTime))
+               .ForMember(s => s.SchedulePlayDto, r => r.MapFrom(ur => ur.SchedulePlay));
+
+
             //CreateMap<Person, PersonDto>();
             //CreateMap<RelationshipType, RelationshipTypeDto>();
             //CreateMap<EndPointPoInbox, EndPointPoInboxDto>();
